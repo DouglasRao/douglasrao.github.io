@@ -1,0 +1,135 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto Mono', monospace;
+    background-color: #121212;
+    color: #fff;
+  }
+  .container {
+    text-align: center;
+    padding-top: 10px;
+  }
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: 20px auto;
+    background-image: url('https://universoracionalista.org/wp-content/uploads/2022/12/Douglas-300x300.jpg');
+  }
+  h1, .prompt {
+    color: #0f0;
+  }
+  p {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  .footer {
+    text-align: center;
+    margin: 40px 0;
+    color: #fff;
+  }
+  .bold {
+    font-weight: bold;
+  }
+  .terminal-window {
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #2d2d2d;
+    padding: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+    min-height: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .terminal-header {
+    background-color: #eee;
+    color: #333;
+    padding: 5px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    display: flex;
+    justify-content: start;
+  }
+  .terminal-header button {
+    margin-right: 5px;
+    border: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .close { background-color: #ff5f56; }
+  .minimize { background-color: #ffbd2e; }
+  .maximize { background-color: #27c93f; }
+  .terminal {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    overflow-y: scroll;
+    flex-grow: 1;
+    text-align: left;
+    height: 300px;
+  }
+  .terminal-output {
+    white-space: pre-wrap;
+  }
+  .terminal-input-container {
+    display: flex;
+    align-items: center;
+  }
+  .terminal-input {
+    all: unset;
+    color: #fff;
+    font-family: 'Roboto Mono', monospace;
+    flex-grow: 1;
+  }
+  .blink-cursor {
+    font-weight: bold;
+    animation: blink-animation 1s steps(5, start) infinite;
+  }
+  @keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+  .terminal::-webkit-scrollbar {
+  width: 1px;
+  }
+  .terminal::-webkit-scrollbar-track {
+  background: #2d2d2d;
+  }
+  .terminal::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 6px;
+  border: 3px solid #2d2d2d;
+  }
+  
+  @media (max-width: 768px) {
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+    }
+    .terminal-window, p {
+      max-width: 95%;
+      padding: 5px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 16px;
+    }
+    .terminal-header button {
+      width: 10px;
+      height: 10px;
+    }
+    .terminal-input, .terminal-output {
+      font-size: 12px;
+    }
+  }
+  
