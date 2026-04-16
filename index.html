@@ -1,35 +1,502 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Curriculum Vitae - Douglas Rao</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link href="style.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Douglas Rodrigues Aguiar de Oliveira — Pentester & Science Communicator. Offensive security specialist, founder of Universo Racionalista." />
+  <meta property="og:title" content="Douglas R. A. de Oliveira — Pentester & Science Communicator" />
+  <meta property="og:description" content="Offensive security specialist, founder of Universo Racionalista and president of the Instituto Ética, Racionalidade e Futuro da Humanidade." />
+  <meta property="og:image" content="https://universoracionalista.org/wp-content/uploads/2022/12/Douglas-300x300.jpg" />
+  <meta property="og:type" content="website" />
+  <title>DouglasRao - Pentester</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23080a0e'/><text x='2' y='25' font-family='monospace' font-size='22' font-weight='bold' fill='%2300d4aa'>&gt;_</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css?v=26" />
 </head>
 <body>
-<div class="container">
-  <div class="profile-pic"></div>
-  <h1>Douglas Rodrigues Aguiar de Oliveira</h1>
-  <p>Olá, meu nome é <a href="https://www.linkedin.com/in/douglasrao/" target="_blank" class="bold">Douglas Rodrigues Aguiar de Oliveira</a>, um <span class="bold">Divulgador Científico</span> e <span class="bold">Pentester</span> apaixonado por cibersegurança e pela disseminação do conhecimento científico. Com uma carreira dedicada a identificar vulnerabilidades de segurança em organizações e promover uma compreensão mais profunda da ciência e tecnologia entre o público, trago uma combinação única de habilidades técnicas e de comunicação.</p>
-  <div class="terminal-window">
-    <div class="terminal-header">
-      <button class="close"></button>
-      <button class="minimize"></button>
-      <button class="maximize"></button>
+
+  <!-- ═══════════════════════════════════════════════
+       NAV
+  ═══════════════════════════════════════════════ -->
+  <nav id="navbar" class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Back to top">
+        <span class="logo-hack"><span class="logo-prompt">&gt;_</span><span class="logo-cursor">&#9646;</span></span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#terminal">Terminal</a></li>
+        <li><a href="#sobre">About</a></li>
+        <li><a href="#experiencia">Experience</a></li>
+        <li><a href="#certificacoes">Certifications</a></li>
+        <li><a href="#contato">Contact</a></li>
+      </ul>
+
+      <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-    <div class="terminal">
-      <div class="terminal-output"></div>
-      <div class="terminal-input-container">
-        <span class="prompt">$&nbsp;</span>
-        <input type="text" id="terminal-input" class="terminal-input" autofocus>
+
+    <div id="mobile-menu" class="mobile-menu" role="dialog" aria-label="Mobile menu" aria-hidden="true">
+      <ul role="list">
+        <li><a href="#terminal">Terminal</a></li>
+        <li><a href="#sobre">About</a></li>
+        <li><a href="#experiencia">Experience</a></li>
+        <li><a href="#certificacoes">Certifications</a></li>
+        <li><a href="#contato">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════
+         TERMINAL
+    ═══════════════════════════════════════════════ -->
+    <section id="terminal" aria-labelledby="term-heading">
+      <div class="container">
+        <h2 id="term-heading" class="section-title" data-reveal>Interactive Terminal</h2>
+
+        <div class="terminal-window" role="region" aria-label="Interactive terminal" data-reveal>
+          <div class="terminal-header" aria-hidden="true">
+            <button class="terminal-btn terminal-btn-close" title="Close" tabindex="-1"></button>
+            <button class="terminal-btn terminal-btn-minimize" title="Minimize" tabindex="-1"></button>
+            <button class="terminal-btn terminal-btn-maximize" title="Maximize" tabindex="-1"></button>
+            <span class="terminal-title">douglas@portfolio:~</span>
+          </div>
+
+          <div class="terminal-body">
+            <div class="terminal-output" id="terminal-output" aria-live="polite" aria-label="Terminal output" role="log"></div>
+
+            <div class="terminal-input-container" role="group" aria-label="Terminal input">
+              <label for="terminal-input" class="prompt" aria-label="Terminal prompt">$ </label>
+              <input
+                id="terminal-input"
+                type="text"
+                class="terminal-input"
+                autocomplete="off"
+                autocorrect="off"
+                autocapitalize="off"
+                spellcheck="false"
+                placeholder="type a command..."
+                aria-label="Command input"
+              />
+            </div>
+          </div>
+        </div>
+
+        <p class="terminal-hint">Type <code>help</code> to see available commands</p>
       </div>
-    </div>
-  </div>
-</div>
-<div class="footer">
-  &copy; 2024 Desenvolvido por <span class="bold">Douglas Rodrigues Aguiar de Oliveira</span>
-</div>
-<script src="script.js"></script>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════ -->
+    <section id="hero" aria-label="Introduction">
+
+<div class="hero-content">
+        <h1 class="hero-name">Douglas Rodrigues<br />Aguiar de Oliveira</h1>
+
+        <p class="hero-subtitle">Pentester &amp; Science Communicator</p>
+
+        <p class="hero-tagline">
+          Offensive security with purpose. Science as a tool for social transformation.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#experiencia" class="btn btn-primary">View Experience</a>
+          <a href="#contato" class="btn btn-secondary">Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SOBRE
+    ═══════════════════════════════════════════════ -->
+    <section id="sobre" aria-labelledby="sobre-heading">
+      <div class="container">
+        <h2 id="sobre-heading" class="section-title" data-reveal>About Me</h2>
+
+        <div class="about-grid">
+          <div class="profile-pic" data-reveal>
+            <img
+              src="https://universoracionalista.org/wp-content/uploads/2022/12/Douglas-300x300.jpg"
+              alt="Photo of Douglas Rodrigues Aguiar de Oliveira"
+              width="180"
+              height="180"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="about-text" data-reveal>
+            <p>
+              <span class="signal-term signal-term-pentester">Pentester</span> with strong experience executing high-complexity security assessments across
+              web applications, mobile apps, APIs, cloud infrastructure and AI/LLM environments.
+              I specialize in combining advanced Ethical Hacking techniques and exploit
+              development with the practical application of artificial intelligence, both to
+              improve pentesting workflows and to identify vulnerabilities in AI-driven systems.
+            </p>
+            <p>
+              <span class="signal-term signal-term-consulting">Cybersecurity Consulting</span> focused on helping organizations understand the impact
+              of vulnerabilities, prioritize remediation and improve the communication of security
+              issues across technical and non-technical audiences. I provide support in the
+              interpretation and correction of identified weaknesses, turning complex technical
+              findings into clear and actionable recommendations.
+            </p>
+            <p>
+              <span class="signal-term signal-term-communicator">Science Communicator</span> with over a decade of experience in science communication,
+              public engagement and knowledge translation. My work focuses on translating complex
+              scientific language into content that broader audiences can understand, connecting
+              scientific and technical subjects to the public through writing, lectures and
+              educational outreach.
+            </p>
+
+            <div class="about-tags">
+              <a href="https://www.linkedin.com/in/douglasrao/" target="_blank" rel="noopener noreferrer" class="tag">
+                💼 LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         EXPERIÊNCIA
+    ═══════════════════════════════════════════════ -->
+    <section id="experiencia" aria-labelledby="exp-heading">
+      <div class="container">
+        <h2 id="exp-heading" class="section-title" data-reveal>Experience</h2>
+
+        <ol class="timeline" role="list">
+
+          <li class="timeline-item" data-reveal>
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.75rem;flex-wrap:wrap;gap:0.5rem;">
+                <span class="timeline-company">NTT DATA Europe &amp; Latam</span>
+                <span class="timeline-period">2024 — Present</span>
+              </div>
+              <ul class="timeline-role" role="list">
+                <li><strong style="color:#e8ecf0;">Cybersecurity Analyst</strong>
+                  <ul style="margin-top:0.4rem;">
+                    <li>Conducting penetration tests on AI/LLMs, APIs, cloud environments, mobile applications (Android and iOS) and web applications</li>
+                    <li>Providing cybersecurity consulting services to clients</li>
+                  </ul>
+                </li>
+                <li><strong style="color:#e8ecf0;">Information Security Analyst</strong>
+                  <ul style="margin-top:0.4rem;">
+                    <li>Conducting risk assessments in projects</li>
+                    <li>Executing vulnerability analyses in corporate software</li>
+                    <li>Developing and executing Business Continuity Plans (BCP) and Business Impact Analyses (BIA)</li>
+                    <li>Coordinating security incident management and response</li>
+                    <li>Leading investigations of internal incidents to determine causes and implement fixes</li>
+                    <li>Responding to Information Security questionnaires and managing internal and external audits</li>
+                    <li>Managing Access Control and CCTV systems</li>
+                    <li>Supporting awareness programs and corporate security training</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline-item" data-reveal>
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.75rem;flex-wrap:wrap;gap:0.5rem;">
+                <span class="timeline-company">Guardsi Cybersecurity</span>
+                <span class="timeline-period">2022 — 2023</span>
+              </div>
+              <ul class="timeline-role" role="list">
+                <li><strong style="color:#e8ecf0;">Information Security Consultant and Penetration Tester</strong>
+                  <ul style="margin-top:0.4rem;">
+                    <li>Conducting penetration tests across APIs (REST, GraphQL and SOAP), cloud infrastructures, mobile applications (Android and iOS), networks and web applications</li>
+                    <li>Developing projects using Django</li>
+                    <li>Providing information security consulting services to clients</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline-item" data-reveal>
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.75rem;flex-wrap:wrap;gap:0.5rem;">
+                <span class="timeline-company">Solyd Offensive Security</span>
+                <span class="timeline-period">2022 — 2023</span>
+              </div>
+              <ul class="timeline-role" role="list">
+                <li><strong style="color:#e8ecf0;">Cybersecurity Instructor</strong>
+                  <ul style="margin-top:0.4rem;">
+                    <li>Supporting enrolled students in courses such as "Introduction to Hacking and Pentesting 2.0", "Pentesting from Zero to Professional", "Basic Python" and "Professional Python in Practice", helping them understand key concepts and techniques in cybersecurity and programming</li>
+                    <li>Developing educational videos presenting solutions to Capture The Flag (CTF) challenges designed for the "Pentesting from Zero to Professional" course</li>
+                    <li>Creating educational content for social media focused on pentesting practices</li>
+                    <li>Writing technical articles on Information Security</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline-item" data-reveal>
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.75rem;flex-wrap:wrap;gap:0.5rem;">
+                <span class="timeline-company">Universo Racionalista</span>
+                <span class="timeline-period">2012 — 2022</span>
+              </div>
+              <ul class="timeline-role" role="list">
+                <li><strong style="color:#e8ecf0;">Information Security Analyst</strong>
+                  <ul style="margin-top:0.4rem;">
+                    <li>Analyzing and assessing security risks in web applications</li>
+                    <li>Implementing and configuring security solutions, including IDS/IPS systems and endpoint protection on Linux servers</li>
+                    <li>Applying security patches to CMS platforms and servers</li>
+                    <li>Conducting penetration tests on web applications following OWASP guidelines</li>
+                    <li>Developing internal web applications using HTML, CSS, JavaScript and PHP</li>
+                  </ul>
+                </li>
+                <li><strong style="color:#e8ecf0;">Science Communicator</strong>
+                  <ul style="margin-top:0.4rem;">
+                    <li>Founder</li>
+                    <li>Writing articles on science and technology for science communication</li>
+                    <li>Creating image and video content about science, philosophy and technology for social media</li>
+                    <li>Giving talks on science communication and scientific thinking</li>
+                    <li>Attending science and technology conferences and events</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         CERTIFICAÇÕES
+    ═══════════════════════════════════════════════ -->
+    <section id="certificacoes" aria-labelledby="cert-heading">
+      <div class="container">
+        <h2 id="cert-heading" class="section-title" data-reveal>Certifications</h2>
+
+        <ul class="cert-grid" role="list">
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">CyberWarFare Labs</span>
+            <span class="cert-name">Certified Red Team Analyst (CRTA)</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">CyberWarFare Labs</span>
+            <span class="cert-name">Certified Red Team CredOps Infiltrator (CRT-COI)</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">CyberWarFare Labs</span>
+            <span class="cert-name">Multi-Cloud Red Team Analyst (MCRTA)</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">CyberWarFare Labs</span>
+            <span class="cert-name">Certified Web Red Team Analyst (Web-RTA)</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">Hackviser</span>
+            <span class="cert-name">Certified Associate Penetration Tester (CAPT)</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">INE / eLearnSecurity</span>
+            <span class="cert-name">eLearnSecurity Junior Penetration Tester (eJPT)</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">INE / eLearnSecurity</span>
+            <span class="cert-name">INE Certified Cloud Associate (ICCA)</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">Microsoft</span>
+            <span class="cert-name">Microsoft Certified: Security, Compliance and Identity Fundamentals (SC-900)</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">PECB</span>
+            <span class="cert-name">Certificate Holder in ISO 22301 Foundation</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">PECB</span>
+            <span class="cert-name">Certificate Holder in ISO/IEC 27001:2022 Foundation</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">Red Team Leaders</span>
+            <span class="cert-name">Certified Cybersecurity Educator Professional (CCEP)</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">Red Team Leaders</span>
+            <span class="cert-name">Certified Offensive Windows API (COWA)</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">Red Team Leaders</span>
+            <span class="cert-name">Certified Red Team Engineer Development (CRTED)</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">Red Team Leaders</span>
+            <span class="cert-name">Certified Red Team Operations Management (CRTOM)</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">Red Team Leaders</span>
+            <span class="cert-name">Certified Security Code Review Beginners (CSCRB)</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">Solyd Offensive Security</span>
+            <span class="cert-name">Solyd Certified Pentester (SYCP)</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">The SecOps Group</span>
+            <span class="cert-name">Certified AI/ML Pentester (C-AI/MLPen)</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">The SecOps Group</span>
+            <span class="cert-name">Certified AppSec Pentester (CAPen)</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">The SecOps Group</span>
+            <span class="cert-name">Certified AppSec Pentesting eXpert (CAPenX)</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">The SecOps Group</span>
+            <span class="cert-name">Certified AppSec Practitioner (CAP)</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">The SecOps Group</span>
+            <span class="cert-name">Certified Cloud Security Practitioner — AWS (CCSP-AWS)</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">The SecOps Group</span>
+            <span class="cert-name">Certified Network Pentester (CNPen)</span>
+          </li>
+
+          <li class="cert-card" data-reveal>
+            <span class="cert-badge">The SecOps Group</span>
+            <span class="cert-name">Certified Network Security Practitioner (CNSP)</span>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         FORMAÇÃO
+    ═══════════════════════════════════════════════ -->
+    <section id="formacao" aria-labelledby="form-heading">
+      <div class="container">
+        <h2 id="form-heading" class="section-title" data-reveal>Education</h2>
+
+        <ul class="edu-grid" role="list">
+
+          <li class="edu-card" data-reveal>
+            <span class="edu-degree">Computer Forensics</span>
+            <span class="edu-institution">Universidade Cruzeiro do Sul — Postgraduate</span>
+          </li>
+
+          <li class="edu-card" data-reveal>
+            <span class="edu-degree">Cybersecurity</span>
+            <span class="edu-institution">Universidade Cruzeiro do Sul — Postgraduate</span>
+          </li>
+
+          <li class="edu-card" data-reveal>
+            <span class="edu-degree">Ethical Hacking &amp; Cybersecurity</span>
+            <span class="edu-institution">VINCIT College — Postgraduate</span>
+          </li>
+
+          <li class="edu-card" data-reveal>
+            <span class="edu-degree">Full Stack Java Developer</span>
+            <span class="edu-institution">VINCIT College — Postgraduate</span>
+          </li>
+
+          <li class="edu-card" data-reveal>
+            <span class="edu-degree">Computer Networks Technology</span>
+            <span class="edu-institution">Universidade de Franca — Bachelor's</span>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         CONTATO
+    ═══════════════════════════════════════════════ -->
+    <section id="contato" aria-labelledby="contato-heading">
+      <div class="container">
+        <h2 id="contato-heading" class="section-title" data-reveal>Contact</h2>
+
+        <div class="contact-grid">
+
+          <a
+            href="mailto:douglas.rao@protonmail.ch"
+            class="contact-card"
+            data-reveal
+            aria-label="Send email to douglas.rao@protonmail.ch"
+          >
+            <span class="contact-icon" aria-hidden="true">✉️</span>
+            <div class="contact-info">
+              <span class="contact-label">Email</span>
+              <span class="contact-value">douglas.rao@protonmail.ch</span>
+            </div>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/douglasrao/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-card"
+            data-reveal
+            aria-label="Douglas R. A. de Oliveira's LinkedIn profile"
+          >
+            <span class="contact-icon" aria-hidden="true">💼</span>
+            <div class="contact-info">
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-value">linkedin.com/in/douglasrao/</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <p>&copy; <span class="current-year"></span> Douglas Rodrigues Aguiar de Oliveira</p>
+    <nav class="footer-links" aria-label="Social links">
+      <a href="https://www.linkedin.com/in/douglasrao/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:douglas.rao@protonmail.ch">Email</a>
+    </nav>
+  </footer>
+
+  <script src="script.js?v=17" defer></script>
 </body>
 </html>
